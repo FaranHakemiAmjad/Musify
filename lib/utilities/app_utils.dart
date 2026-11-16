@@ -174,3 +174,12 @@ bool _isDolbyCodec(String codec) {
       codec.contains('eac3') ||
       codec.contains('dolby');
 }
+
+/// Parses a video id from url
+String? parseVideoId(String url) {
+  final id = VideoId.parseVideoId(url);
+  if (id == null) {
+    return url;
+  }
+  return id;
+}
